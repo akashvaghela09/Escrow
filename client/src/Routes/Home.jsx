@@ -18,16 +18,31 @@ const Home = () => {
 
     const handleGetMethod = async () => {
         dispatch(setLoading(true))
-        let tempName = await contract.getName();
-        setNameState(tempName);
+        // let tempName = await contract.getName();
+        // let tempName = await contract.set("user1", 22);
+        // let tempName2 = await contract.set("user2", 12);
+        // let tempName22 = await contract.set("user2", 52);
+        // let tempName222 = await contract.set("user2", 16);
+        // let tempName2222 = await contract.set("user2", 81);
+        let temp = await contract.get();
+        console.log(temp);
+        temp.map((el) => {
+            return console.log(el.name, el.age.toString())
+        })
+        // setNameState(tempName);
         dispatch(setLoading(false))
 
     }
 
     const handleSetMethod = async() => {
         dispatch(setLoading(true))
-        await contract.setName(nameString);
-        setNameString("")
+        // await contract.setName(nameString);
+        await contract.set("user1", 22);
+        await contract.set("user2", 12);
+        await contract.set("user2", 52);
+        await contract.set("user2", 16);
+        await contract.set("user2", 81);
+        // setNameString("")
         dispatch(setLoading(false))
     }
     return (

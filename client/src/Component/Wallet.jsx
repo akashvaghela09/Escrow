@@ -11,7 +11,7 @@ import { AiFillCaretUp } from 'react-icons/ai';
 import { MdAccountBalanceWallet, MdOutlineAccountBalanceWallet } from 'react-icons/md';
 import { setAlert, setContractInstance, setIsAuth, setWallet, setWalletModal } from "../Redux/app/actions"
 import { ethers } from "ethers";
-import myContractData from "../artifacts/contracts/Test.sol/Test.json";
+import myContractData from "../artifacts/contracts/Escrow.sol/Escrow.json";
 
 const Wallet = () => {
     const dispatch = useDispatch();

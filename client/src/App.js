@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from "./Component/Spinner";
 import { Error } from './Component/Error';
 import { Alert } from './Component/Alert';
-import myContractData from "./artifacts/contracts/Test.sol/Test.json";
 import { setContractInstance } from "./Redux/app/actions.js";
 import { ethers } from "ethers";
 

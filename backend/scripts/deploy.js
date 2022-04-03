@@ -1,15 +1,15 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const Test = await ethers.getContractFactory(
-        "Test"   // Contract Name
+    const Escrow = await ethers.getContractFactory(
+        "Escrow"   // Contract Name
     );
 
     // Create new instance
-    const newTestContract = await Test.deploy()
+    const newEscrowContract = await Escrow.deploy()
 
-    await newTestContract.deployed();
-    console.log("Success, Contract Deployed: ", newTestContract.address);
+    await newEscrowContract.deployed();
+    console.log("Success, Contract Deployed: ", newEscrowContract.address);
 }
 
 main()
