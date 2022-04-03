@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './Home';
-import { Dashboard } from './Dashboard';
-import { ContactMe } from './ContactMe';
+import { CreateContract } from './CreateContract';
+import { ContractList } from './ContractList';
 import { Header } from "../Component/Header";
 
 const AllRoutes = () => {
@@ -11,8 +11,8 @@ const AllRoutes = () => {
             <Header />
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/dashboard" element={<Dashboard />} />
-                <Route exact path="/contact-me" element={<ContactMe />} />
+                <Route exact path="/create-contract" element={<CreateContract />} />
+                <Route exact path="/contract-list" element={<ContractList />} />
                 <Route path="*" element={<h1>Page Not found</h1>} />
             </Routes>
         </div>

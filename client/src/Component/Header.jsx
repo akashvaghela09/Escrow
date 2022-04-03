@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { BsQuestionCircle, BsGithub } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import { FaClipboardList } from 'react-icons/fa';
+import { GiNotebook } from 'react-icons/gi';
 import { Wallet } from './Wallet';
 
 const Header = () => {
@@ -19,10 +21,11 @@ const Header = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.pageLinkContainer}>
-                <label className={path === "/" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("")} >Home</label>
+                <label className={path === "/" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("")} >Escrow</label>
                 <div className={styles.routeContainer}>
-                    <label className={path === "/dashboard" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("dashboard")} >Dashboard</label>
-                    <label className={path === "/contact-me" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("contact-me")} >Contact</label>
+                    <label className={path === "/create-contract" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("create-contract")} >Create</label>
+                    <label className={path === "/contract-list" ? styles.activeLink : styles.pageLink} onClick={() => handleRoute("contract-list")} >List</label>
+                    <label className={styles.pageLink} onClick={() => window.open(`https://github.com/akashvaghela09/Escrow`, '_blank')} >GitHub</label>
                 </div>
             </div>
             
@@ -36,20 +39,20 @@ const Header = () => {
                     />
                     <p>Home</p>
                 </label>
-                <label className={styles.iconWrapper} onClick={() => handleRoute("dashboard")} >
-                    <MdOutlineDashboard 
-                        className={path === "/dashboard" ? styles.activeLinkIcon : styles.pageIcon} 
+                <label className={styles.iconWrapper} onClick={() => handleRoute("create-contract")} >
+                    <GiNotebook 
+                        className={path === "/create-contract" ? styles.activeLinkIcon : styles.pageIcon} 
                     />
-                    <p>Dashboard</p>
+                    <p>Create</p>
                 </label>
-                <label className={styles.iconWrapper} onClick={() => handleRoute("contact-me")} >
-                    <BsQuestionCircle 
-                        className={path === "/contact-me" ? styles.activeLinkIcon : styles.pageIcon} 
+                <label className={styles.iconWrapper} onClick={() => handleRoute("contract-list")} >
+                    <FaClipboardList 
+                        className={path === "/contract-list" ? styles.activeLinkIcon : styles.pageIcon} 
                     />
-                    <p>Contact Me</p>
+                    <p>List</p>
                 </label>
                 <label className={styles.iconWrapper}>
-                    <BsGithub className={path === "/github" ? styles.activeLinkIcon : styles.pageIcon} onClick={() => window.open(``, '_blank')} />
+                    <BsGithub className={path === "/github" ? styles.activeLinkIcon : styles.pageIcon} onClick={() => window.open(`https://github.com/akashvaghela09/Escrow`, '_blank')} />
                     <p>GitHub</p>
                 </label>
             </div>

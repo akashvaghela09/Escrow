@@ -1,60 +1,38 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { setLoading } from "../Redux/app/actions"
+import { FaClipboardList } from 'react-icons/fa';
+import { GiNotebook } from 'react-icons/gi';
 
 const Home = () => {
     const dispatch = useDispatch();
     const location = useLocation();
-
-    const [nameState, setNameState] = useState("");
-    const [nameString, setNameString] = useState("");
-
-    const { isLoading } = useSelector((state) => state.app);
+    let navigate = useNavigate();
+    // let path = location.pathname;
+    const handleRoute = (para) => {
+        navigate(`/${para}`)
+    }
     const {
         contract
     } = useSelector((state) => state.app);
 
-    const handleGetMethod = async () => {
-        dispatch(setLoading(true))
-        // let tempName = await contract.getName();
-        // let tempName = await contract.set("user1", 22);
-        // let tempName2 = await contract.set("user2", 12);
-        // let tempName22 = await contract.set("user2", 52);
-        // let tempName222 = await contract.set("user2", 16);
-        // let tempName2222 = await contract.set("user2", 81);
-        let temp = await contract.get();
-        console.log(temp);
-        temp.map((el) => {
-            return console.log(el.name, el.age.toString())
-        })
-        // setNameState(tempName);
-        dispatch(setLoading(false))
 
-    }
-
-    const handleSetMethod = async() => {
-        dispatch(setLoading(true))
-        // await contract.setName(nameString);
-        await contract.set("user1", 22);
-        await contract.set("user2", 12);
-        await contract.set("user2", 52);
-        await contract.set("user2", 16);
-        await contract.set("user2", 81);
-        // setNameString("")
-        dispatch(setLoading(false))
-    }
     return (
         <div className={styles.wrapper}>
-            <div className={styles.card}>
-                <p className={styles.cardText}>{nameState}</p>
-                <button onClick={handleGetMethod} className={styles.cardBtn}>Get Name</button>
+            <p className={styles.pageText}>Create Contract or work for existing one and get paid 🤩</p>
+            <div className={styles.cardDiv}>
+                <div className={styles.card} onClick={() => handleRoute("create-contract")}>
+                    <GiNotebook className={styles.cardIcon}/>
+                    <p className={styles.cardText}>Create Contract</p>
+                </div>
+                <div className={styles.card} onClick={() => handleRoute("contract-list")}>
+                    <FaClipboardList className={styles.cardIcon}/>
+                    <p className={styles.cardText}>Contract List</p>
+                </div>
             </div>
-            <div className={styles.card}>
-                <input value={nameString} onChange={(e) => setNameString(e.target.value)} className={styles.cardInput}/>
-                <button onClick={handleSetMethod} className={styles.cardBtn}>Set Name</button>
-            </div>
+            <div className={styles.dummy} />
         </div>
     );
 };
