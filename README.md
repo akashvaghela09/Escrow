@@ -5,7 +5,7 @@
   
 <br/>
 </h1>
-<p align="center">Ethereum blockchain based Dapp Integrated with frontend(React) and other necessary tools such as Truffle(for testing) and HardHat(for deployment). </p>
+<p align="center">Escrow is a Ethereum blockchain based Escrow-Contract Dapp Integrated with frontend(React) and other necessary tools such as Truffle(for testing) and HardHat(for deployment). </p>
 <p align="center">
 <img src="https://img.shields.io/website-up-down-green-red/http/solventx.in.svg" alt="website up"/>
 <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="maintained"/>
@@ -13,7 +13,7 @@
 </p>
 
 
-##  [🌐 Demo](https://solventx.in)
+##  [🌐 Demo](https://escrow-portal.vercel.app)
 
 
 ## 🔧 Tech Stack 
